@@ -9,15 +9,32 @@ public class 문자열자르기프로그램 {
 		String my_str = sc.next();
 		System.out.print("자를 문자개수 : ");
 		int n = sc.nextInt();
-		int len = my_str.length() / n;		
-		String[] short_str = new String[len+1];
+		String[] short_str;
 		
-		for (int i = 0; i <= my_str.length();) {
-			if (i < my_str.length()) {
-				System.out.println(my_str.substring(i,i+n));
-				i += n;
-			} else if (i > my_str.length()) {
-				System.out.println(my_str.substring(i,-1));
+		int len = my_str.length() / n;
+		
+		if (my_str.length() % n == 0) {
+			short_str = new String[len];
+		} else {
+			short_str = new String[len+1];			
+		}
+		int start = 0;
+		int end = n;
+		
+		for (int i = 0; i < short_str.length-1; i++) {
+			short_str[i] = my_str.substring(start, end);
+			start += n;
+			end += n;
+		}
+		
+		short_str[short_str.length-1] = my_str.substring(start);
+
+		System.out.print("분리된 문자열 : [");
+		for(int i = 0; i <= short_str.length-1; i++) {
+			if (i != short_str.length-1) {
+				System.out.printf("\"%s\", ", short_str[i]);				
+			} else {
+				System.out.printf("\"%s\"]", short_str[i]);
 			}
 		}
 	}

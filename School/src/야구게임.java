@@ -13,7 +13,7 @@ public class 야구게임 {
 		
 		// 난수 생성
 		for (int i = 0; i < 3; i++) {
-				num[i] = rnd.nextInt(9)+1;
+				num[i] = rnd.nextInt(9);
 				if (frq[num[i]] == 0) {
 					frq[num[i]] = 1;
 				} else {
@@ -21,7 +21,6 @@ public class 야구게임 {
 				}
 			}
 		System.out.println(Arrays.toString(num));
-		
 		while (true) {
 			int strike = 0;
 			int ball = 0;
@@ -30,7 +29,6 @@ public class 야구게임 {
 			for (int i = 0; i <= 2; i++) {
 				call[i] = Integer.parseInt(n.substring(i,i+1));
 			}
-			System.out.println(Arrays.toString(call));
 			
 			if (num[0] == call[0]) strike++;
 

@@ -27,6 +27,7 @@ public class 세균증식 {
 					cnt += cnt;
 				}
 				System.out.printf("%d마리가 %d시간 후에 %d 마리로 번식함\n", number, time, sum);
+				System.out.println("--------------------------------");
 			}
 			
 		}
